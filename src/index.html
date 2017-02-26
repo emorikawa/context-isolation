@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body style="overflow: hidden; background-color: rgba(0,0,0,0); margin: 0" >
+  <div id="App"></div>
+  <webview src="http://localhost:5556/rawr"></webview>
+</body>
+
+<script type="text/jsx">
+console.log("In INDEX.html")
+console.log(process)
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './app';
+
+ReactDOM.render(<App />, document.getElementById('App'));
+
+// Will log out 'foo' since window.foo is only available in this context
+console.log(window.foo)
+
+// Will log out 'undefined' since window.bar is only available in the isolated
+// context
+console.log(window.bar)
+</script>
+</html>
